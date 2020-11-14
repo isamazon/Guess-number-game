@@ -74,16 +74,24 @@ h1 {
   letter-spacing: 1rem;
   text-align: center;
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, 50%);
 }
 
 .again {
   position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  letter-spacing: 6.5px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-70%, 50%);
+}
+
+.restart {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-30%, 50%);
 }
 
 .guess {
