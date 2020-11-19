@@ -83,3 +83,12 @@ document.querySelector(".restart").addEventListener("click", function () {
   // Reset Highscore
   document.querySelector(".highscore").textContent = 0;
 });
+
+//Add dark mode/light mode button (inverts all colors) this is to listen to an onclick action
+document.querySelector(".switch").addEventListener("click", function () {
+  if ((document.querySelector(".switch").textContent = "Light Mode")) {
+    document.querySelector(".switch").textContent = "Dark Mode";
+  } else if ((document.querySelector(".switch").textContent = "Dark Mode")) {
+    document.querySelector(".switch").textContent = "Light Mode";
+  }
+});
