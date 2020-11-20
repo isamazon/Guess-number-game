@@ -5,7 +5,7 @@ document.querySelector('.message').textContent = 'Correct Number';
 document.querySelector('.guess').value = 0;
 console.log(document.querySelector('.guess').value);
 */
-// 1) First off we want to create our target number and we want it to be a randomized number from 1-... so were going to create a variable named targetNum and make sure its accessible to the global scale.
+// 1) First off we want to create our target number and we want it to be a randomized number from 1-... so create a variable named targetNum and make sure its accessible to the global scale.
 let targetNum = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
@@ -85,10 +85,48 @@ document.querySelector(".restart").addEventListener("click", function () {
 });
 
 //Add dark mode/light mode button (inverts all colors) this is to listen to an onclick action
-document.querySelector(".switch").addEventListener("click", function () {
-  if ((document.querySelector(".switch").textContent = "Light Mode")) {
-    document.querySelector(".switch").textContent = "Dark Mode";
-  } else if ((document.querySelector(".switch").textContent = "Dark Mode")) {
-    document.querySelector(".switch").textContent = "Light Mode";
-  }
-});
+const lightMode = (document.querySelector(".switch").textContent =
+  "Light Mode");
+const darkMode = (document.querySelector(".switch").textContent = "Dark Mode");
+
+document
+  .querySelector(".switch")
+  .addEventListener("click", function darkLightMode() {
+    if (document.querySelector(".switch").textContent === lightMode) {
+      document.querySelector(".switch").textContent = darkMode;
+      document.body.style.backgroundColor = "black";
+      for (let element1 of document.querySelectorAll(
+        ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
+      )) {
+        element1.style.color = "white";
+      }
+      for (let element4 of document.querySelectorAll(
+        ".again, .restart, .check, .number, .switch"
+      )) {
+        element4.style.backgroundColor = "white";
+      }
+      for (let element6 of document.querySelectorAll(
+        ".again, .restart, .check, .number, .switch"
+      )) {
+        element6.style.color = "black";
+      }
+    } else if (document.querySelector(".switch").textContent === darkMode) {
+      document.querySelector(".switch").textContent = lightMode;
+      document.body.style.backgroundColor = "white";
+      for (let element2 of document.querySelectorAll(
+        ".guessh1, .between, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
+      )) {
+        element2.style.color = "black";
+      }
+      for (let element3 of document.querySelectorAll(
+        ".restart, .again, .number, .check, .switch"
+      )) {
+        element3.style.backgroundColor = "black";
+      }
+      for (let element5 of document.querySelectorAll(
+        ".restart, .again, .number, .check, .switch"
+      )) {
+        element5.style.color = "white";
+      }
+    }
+  });
