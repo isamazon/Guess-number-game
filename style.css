@@ -71,6 +71,30 @@ h1 {
   border: none;
 }
 
+.swtich:hover {
+  background-color: grey;
+  color: #eee;
+}
+
+.rules {
+  letter-spacing: 5px;
+  float: right;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  color: black;
+  background-color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 80px;
+  cursor: pointer;
+  border: none;
+}
+
+.rules:hover {
+  background-color: grey;
+  color: #eee;
+}
+
 .number {
   background: #eee;
   color: rgb(0, 0, 0);
@@ -113,7 +137,7 @@ h1 {
 }
 
 .p-restart {
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   float: right;
   position: absolute;
   top: 370px;
@@ -163,4 +187,14 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .btn {
+  }
+}
+
+/* For Tablet */
+@media screen and (min-width: 540px) and (max-width: 780px) {
 }

@@ -96,17 +96,17 @@ document
       document.querySelector(".switch").textContent = darkMode;
       document.body.style.backgroundColor = "black";
       for (let element1 of document.querySelectorAll(
-        ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
+        ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again "
       )) {
         element1.style.color = "white";
       }
       for (let element4 of document.querySelectorAll(
-        ".again, .restart, .check, .number, .switch"
+        ".again, .restart, .check, .number, .switch, .rules"
       )) {
         element4.style.backgroundColor = "white";
       }
       for (let element6 of document.querySelectorAll(
-        ".again, .restart, .check, .number, .switch"
+        ".again, .restart, .check, .number, .switch, .rules"
       )) {
         element6.style.color = "black";
       }
@@ -119,12 +119,12 @@ document
         element2.style.color = "black";
       }
       for (let element3 of document.querySelectorAll(
-        ".restart, .again, .number, .check, .switch"
+        ".restart, .again, .number, .check, .switch, .rules"
       )) {
         element3.style.backgroundColor = "black";
       }
       for (let element5 of document.querySelectorAll(
-        ".restart, .again, .number, .check, .switch"
+        ".restart, .again, .number, .check, .switch, .rules"
       )) {
         element5.style.color = "white";
       }
