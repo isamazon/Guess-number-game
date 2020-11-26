@@ -64,6 +64,8 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".message").textContent = "Start Guessing...";
   // Reset info box to empty
   document.querySelector(".guess").value = "";
+
+  dark();
 });
 
 // 4) implement Restart button to reset everything
@@ -82,6 +84,8 @@ document.querySelector(".restart").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
   // Reset Highscore
   document.querySelector(".highscore").textContent = 0;
+
+  dark();
 });
 
 //Add dark mode/light mode button (inverts all colors) this is to listen to an onclick action
@@ -89,6 +93,58 @@ const lightMode = (document.querySelector(".switch").textContent =
   "Light Mode");
 const darkMode = (document.querySelector(".switch").textContent = "Dark Mode");
 
+document
+  .querySelector(".switch")
+  .addEventListener("click", function darkLightMode() {
+    if (document.querySelector(".switch").textContent === lightMode) {
+      dark();
+    } else if (document.querySelector(".switch").textContent === darkMode) {
+      light();
+    }
+  });
+
+const dark = () => {
+  document.querySelector(".switch").textContent = darkMode;
+  document.body.style.backgroundColor = "black";
+  for (let element1 of document.querySelectorAll(
+    ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again "
+  )) {
+    element1.style.color = "white";
+  }
+  for (let element4 of document.querySelectorAll(
+    ".again, .restart, .check, .number, .switch, .rules"
+  )) {
+    element4.style.backgroundColor = "white";
+  }
+  for (let element6 of document.querySelectorAll(
+    ".again, .restart, .check, .number, .switch, .rules"
+  )) {
+    element6.style.color = "black";
+  }
+};
+
+const light = () => {
+  document.querySelector(".switch").textContent = lightMode;
+  document.body.style.backgroundColor = "white";
+  for (let element2 of document.querySelectorAll(
+    ".guessh1, .between, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
+  )) {
+    element2.style.color = "black";
+  }
+  for (let element3 of document.querySelectorAll(
+    ".restart, .again, .number, .check, .switch, .rules"
+  )) {
+    element3.style.backgroundColor = "black";
+  }
+  for (let element5 of document.querySelectorAll(
+    ".restart, .again, .number, .check, .switch, .rules"
+  )) {
+    element5.style.color = "white";
+  }
+};
+/* 
+    
+    
 document
   .querySelector(".switch")
   .addEventListener("click", function darkLightMode() {
@@ -130,3 +186,5 @@ document
       }
     }
   });
+
+    */
