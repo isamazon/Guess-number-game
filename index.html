@@ -8,12 +8,32 @@
     <title>Guess My Number!</title>
   </head>
   <body>
-    <header>
-      <h1 class="guessh1" class="btn darkMode">Guess My Number!</h1>
+    <header></header>
+    <section class="top">
+      <h1 class="guessh1" class="btn darkMode">Guess the Number!</h1>
       <button class="switch" class="switch2">Light Mode</button>
       <button class="rules">Rules</button>
       <p class="between">(Between 1 and 20)</p>
-    </header>
+    </section>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class="rulesH1">Rules</h1>
+      <p class="rulesP">
+        Welcome to the guessing number game! The rules are to guess the correct
+        number within 1 to 20! Your score starts with 20 points and with each
+        failed attempt at guessing the correct number your score will have 1
+        point deducted! Incorreclty guess the number 20 times and when your
+        score reaches 0 you will lose the game and the screen will turn red. If
+        you correctly guess the score within 20 guesses you will win the game
+        and the screen will turn green! If you want to play again you will
+        either click the 'Again' button to play again and keep your highscore if
+        you click the 'Reset' button your highscore will be reset to 0! Good
+        luck!
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
+
     <main>
       <section class="middle">
         <button class="btn again">Again!</button>

@@ -5,7 +5,7 @@ document.querySelector('.message').textContent = 'Correct Number';
 document.querySelector('.guess').value = 0;
 console.log(document.querySelector('.guess').value);
 */
-// 1) First off we want to create our target number and we want it to be a randomized number from 1-... so create a variable named targetNum and make sure its accessible to the global scale.
+// 1) First create the target number and we want it to be a randomized number from 1-... so create a variable named targetNum and make sure its accessible to the global scale.
 let targetNum = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
@@ -65,7 +65,11 @@ document.querySelector(".again").addEventListener("click", function () {
   // Reset info box to empty
   document.querySelector(".guess").value = "";
 
-  dark();
+  if (document.querySelector(".switch").textContent === darkMode) {
+    dark();
+  } else {
+    light();
+  }
 });
 
 // 4) implement Restart button to reset everything
@@ -85,7 +89,11 @@ document.querySelector(".restart").addEventListener("click", function () {
   // Reset Highscore
   document.querySelector(".highscore").textContent = 0;
 
-  dark();
+  if (document.querySelector(".switch").textContent === darkMode) {
+    dark();
+  } else {
+    light();
+  }
 });
 
 //Add dark mode/light mode button (inverts all colors) this is to listen to an onclick action
@@ -123,6 +131,9 @@ const dark = () => {
   }
 };
 
+let lightWhiteColors = document.querySelectorAll(
+  ".restart, .again, .number, .check, .switch, .rules"
+);
 const light = () => {
   document.querySelector(".switch").textContent = lightMode;
   document.body.style.backgroundColor = "white";
@@ -136,12 +147,16 @@ const light = () => {
   )) {
     element3.style.backgroundColor = "black";
   }
-  for (let element5 of document.querySelectorAll(
-    ".restart, .again, .number, .check, .switch, .rules"
-  )) {
+  for (let element5 of lightWhiteColors) {
     element5.style.color = "white";
   }
 };
+
+/*          MODAL WINDOW           */
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+
 /* 
     
     

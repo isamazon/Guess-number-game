@@ -19,7 +19,7 @@ body {
 }
 
 /* LAYOUT */
-header {
+.top {
   display: flex;
   position: relative;
   height: 35vh;
@@ -96,6 +96,26 @@ h1 {
   background-color: grey;
   color: #eee;
 }
+
+/* ------------------------------ */
+/*   CLASSES TO MAKE MODAL WORK   */
+.hidden {
+  display: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: black;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgb(0, 0, 0, 0.3);
+  z-index: 10;
+}
+/* ------------------------------ */
 
 .number {
   background: #eee;
