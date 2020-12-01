@@ -97,6 +97,8 @@ document.querySelector(".restart").addEventListener("click", function () {
 });
 
 //Add dark mode/light mode button (inverts all colors) this is to listen to an onclick action
+
+/*          IMPLEMENTING DARK MODE AND LIGHT MODE          */
 const lightMode = (document.querySelector(".switch").textContent =
   "Light Mode");
 const darkMode = (document.querySelector(".switch").textContent = "Dark Mode");
@@ -111,95 +113,73 @@ document
     }
   });
 
+const darkModeBackground = document.querySelectorAll(
+  ".again, .restart, .check, .number, .switch, .show-rules, .modal"
+);
+const darkModeColor = document.querySelectorAll(
+  ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again "
+);
+const darkModeBlackText = document.querySelectorAll(
+  ".again, .restart, .check, .number, .switch, .show-rules, .rulesH1, .rulesP, .close-modal"
+);
 const dark = () => {
   document.querySelector(".switch").textContent = darkMode;
   document.body.style.backgroundColor = "black";
-  for (let element1 of document.querySelectorAll(
-    ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again "
-  )) {
+  for (let element1 of darkModeColor) {
     element1.style.color = "white";
   }
-  for (let element4 of document.querySelectorAll(
-    ".again, .restart, .check, .number, .switch, .rules"
-  )) {
+  for (let element4 of darkModeBackground) {
     element4.style.backgroundColor = "white";
   }
-  for (let element6 of document.querySelectorAll(
-    ".again, .restart, .check, .number, .switch, .rules"
-  )) {
+  for (let element6 of darkModeBlackText) {
     element6.style.color = "black";
   }
 };
 
-let lightWhiteColors = document.querySelectorAll(
-  ".restart, .again, .number, .check, .switch, .rules"
+const lightWhiteColors = document.querySelectorAll(
+  ".restart, .again, .number, .check, .switch, .show-rules, .rulesH1, .rulesP, .close-modal"
 );
+const lightBlackBackground = document.querySelectorAll(
+  ".restart, .again, .number, .check, .switch, .show-rules"
+);
+const lightBlackColors = document.querySelectorAll(
+  ".guessh1, .between, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
+);
+const ModalLightBackground = document.querySelectorAll(".modal");
+
 const light = () => {
   document.querySelector(".switch").textContent = lightMode;
   document.body.style.backgroundColor = "white";
-  for (let element2 of document.querySelectorAll(
-    ".guessh1, .between, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
-  )) {
+  for (let element2 of lightBlackColors) {
     element2.style.color = "black";
   }
-  for (let element3 of document.querySelectorAll(
-    ".restart, .again, .number, .check, .switch, .rules"
-  )) {
+  for (let element3 of lightBlackBackground) {
     element3.style.backgroundColor = "black";
   }
   for (let element5 of lightWhiteColors) {
     element5.style.color = "white";
   }
+  for (let blackModalBackground of ModalLightBackground) {
+    blackModalBackground.style.backgroundColor = "black";
+  }
 };
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 /*          MODAL WINDOW           */
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-modal");
+const btnOpenModal = document.querySelector(".show-rules");
 
-/* 
-    
-    
-document
-  .querySelector(".switch")
-  .addEventListener("click", function darkLightMode() {
-    if (document.querySelector(".switch").textContent === lightMode) {
-      document.querySelector(".switch").textContent = darkMode;
-      document.body.style.backgroundColor = "black";
-      for (let element1 of document.querySelectorAll(
-        ".between, .guessh1, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again "
-      )) {
-        element1.style.color = "white";
-      }
-      for (let element4 of document.querySelectorAll(
-        ".again, .restart, .check, .number, .switch, .rules"
-      )) {
-        element4.style.backgroundColor = "white";
-      }
-      for (let element6 of document.querySelectorAll(
-        ".again, .restart, .check, .number, .switch, .rules"
-      )) {
-        element6.style.color = "black";
-      }
-    } else if (document.querySelector(".switch").textContent === darkMode) {
-      document.querySelector(".switch").textContent = lightMode;
-      document.body.style.backgroundColor = "white";
-      for (let element2 of document.querySelectorAll(
-        ".guessh1, .between, .message, .label-score, .label-highscore, .guess, .p-restart, .p-again"
-      )) {
-        element2.style.color = "black";
-      }
-      for (let element3 of document.querySelectorAll(
-        ".restart, .again, .number, .check, .switch, .rules"
-      )) {
-        element3.style.backgroundColor = "black";
-      }
-      for (let element5 of document.querySelectorAll(
-        ".restart, .again, .number, .check, .switch, .rules"
-      )) {
-        element5.style.color = "white";
-      }
-    }
-  });
+btnOpenModal.addEventListener("click", function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+});
 
-    */
+btnCloseModal.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
