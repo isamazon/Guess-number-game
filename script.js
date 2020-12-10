@@ -178,8 +178,17 @@ btnOpenModal.addEventListener("click", function () {
 });
 
 btnCloseModal.addEventListener("click", function () {
+  closeModal();
+});
+document.addEventListener("keydown", function (e) {
+  console.log(e.key);
+
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
+function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-});
-
+}
 /* ---------------------------------------------------------------------------------------------------------------------------------- */
