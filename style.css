@@ -15,6 +15,8 @@ body {
   font-family: "Press Start 2P", sans-serif;
   color: #eee;
   background-color: black;
+  margin: 0;
+  padding: 0;
   /* background-color: #60b347; */
 }
 
@@ -22,12 +24,12 @@ body {
 .top {
   display: flex;
   position: relative;
-  height: 35vh;
+  height: 45vh;
   border-bottom: 7px solid #eee;
 }
 
 main {
-  height: 65vh;
+  height: 45vh;
   color: #eee;
   display: flex;
   align-items: center;
